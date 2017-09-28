@@ -22,7 +22,7 @@ The code should be delivered via git with instructions on running locally, or al
 ``` bash
 
 # git clone repo
-
+git clone https://github.com/marvindanig/fooday.git && cd fooday
 
 # install dependencies
 npm install
