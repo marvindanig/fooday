@@ -7,7 +7,7 @@
     </form>
     <div class="results" v-if="results">
       <div @for="result in results">
-        <img v-bind:src="result.links[0].href" />
+        <!-- Do comething with iterator: result -->
       </div>
     </div>
   </div>
@@ -28,7 +28,7 @@ export default {
         lastName: 'Doe'
       },
       methods: {
-        getResult (query) {
+        getResult: function (query) {
           // URL: https://api.fda.gov/food/enforcement.json?search=reason_for_recall:"ice+cream"&count=report_date
           // OPTIONS: _recall_initiation_date or _report_date_ or _reason_for_recall_
           axios.get(`https://api.fda.gov/food/enforcement.json?search=reason_for_recall:"${query}"&count=report_date`).then(response => {
