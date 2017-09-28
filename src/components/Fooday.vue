@@ -1,8 +1,7 @@
 <template>
-  <div class="fooday">
-    <h1 contenteditable>{{ title }}</h1>
-    <p v-if="showName"> {{ `${user.firstName} ${user.lastName}` }} </p>
-    <p v-else="showName"> Nobody </p>
+  <div class="home">
+    <h1>{{ title }}</h1>
+    <p>{{ fullName }}</p>
   </div>
 </template>
 
@@ -11,13 +10,16 @@ export default {
   name: 'fooday',
   data () {
     return {
-      title: 'Welcome to Fooday',
+      title: 'Fooday, people!',
       user: {
         firstName: 'John',
         lastName: 'Doe'
       },
-      showName: false
-
+      methods: {
+        fullName: () => this.user.firstName + this.user.lastName
+      },
+      computed: {
+      }
     }
   }
 }
@@ -31,4 +33,4 @@ h1 {
 a {
   color: #0af;
 }
-</style>
+</style> 
